@@ -1,11 +1,12 @@
 import React from 'react';
 import Header from "../../components/Header/Header";
+import styles from './Portfolio.module.scss';
 
-function Portfolio() {
+const Portfolio = () => {
   return (
-    <div>
+    <div className={styles.layout}>
         <Header />
-        <div>
+        <div className={styles.content}>
             Bonjour les gens
         </div>
     </div>
