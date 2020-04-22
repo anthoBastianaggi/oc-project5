@@ -1,39 +1,83 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import styles from './Header.module.scss';
+import NavbarRight from './navbar-right/NavbarRight';
+import Sidebar from './sidebar/Sidebar';
+import Bars from '../../assets/icons/bars-solid.svg';
+import Close from '../../assets/icons/times-solid.svg';
+import cx from 'classnames';
+import { useRouteMatch } from 'react-router-dom';
 
-function Header() {
-  return (
-    <nav class="navbar navbar-b navbar-expand-md fixed-top navbar-trans" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll" href="#page-top">BASTIANAGGI Anthony</a>
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+const Header = () => {
+  const [menuSidebarOpen, setMenuSidebarOpen] = useState(false);
+
+  const container = useRef();
+  
+  const menuItems = [
+    { id: "home", href: "/home", label: "home", isActive:  useRouteMatch("/home") },
+    { id: "about", href: "/about", label: "about", isActive:  useRouteMatch("/about") },
+    { id: "skills", href: "/skills", label: "skills", isActive:  useRouteMatch("/skills") },
+    { id: "services", href: "/services", label: "services", isActive:  useRouteMatch("/services") },
+    { id: "portfolio", href: "/portfolio", label: "portfolio", isActive:  useRouteMatch("/portfolio") },
+    { id: "contact", href: "/contact", label: "contact", isActive:  useRouteMatch("/contact") }
+  ];
+  
+  const BtnMenuBurger = () => (
+    <div className={styles.btnMenuSidebarContainer}>
+      <button className={styles.btnMenuSidebar} onClick={openMenuBurger}>
+        {menuSidebarOpen ?
+          <img className={styles.iconMenu} src={Close} alt="icon-close" />
+          : 
+          <img className={styles.iconMenu} src={Bars} alt="icon-bars" /> 
+        }
       </button>
-      <div class="navbar-collapse collapse justify-content-end" id="navbarDefault">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll active" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#competences">Compétences</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#service">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#portfolio">Portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div>
     </div>
-  </nav>
+  )
+
+  function openMenuBurger() {
+    setMenuSidebarOpen(true);
+  }
+
+  function setIsOpen(bool) {
+    setMenuSidebarOpen(bool);
+  }
+
+  function handleClickOutside(e) {
+    if(container.current && !container.current.contains(e.target)) {
+      setIsOpen(false);
+    }
+  }
+
+  function setSidebarRef(ref) {
+    container.current = ref;
+  }
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+    return function cleanup() {
+      document.addEventListener("click", handleClickOutside, true);
+    };
+  });
+
+  return (
+    <header className={styles.header}>
+      <nav className={cx({ [styles.active] : menuSidebarOpen }, styles.navigation)}>
+        <div className={styles.container}>
+          <div className={styles.headerContainer}>
+            <div className={styles.linkContainer}>
+              <a className={styles.link} href="/">BASTIANAGGI Anthony</a>
+            </div>
+            <BtnMenuBurger />
+          </div>
+          <Sidebar
+            className={styles.sidebar}
+            setSidebarRef={setSidebarRef}
+            data={menuItems}
+            opened={menuSidebarOpen}
+          />
+          <NavbarRight data={menuItems} />
+        </div>
+      </nav>
+    </header>
   );
 }
 

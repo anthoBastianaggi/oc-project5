@@ -1,0 +1,105 @@
+@import '../../assets/sass/modules/mixins.scss';
+
+.header {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    .navigation {
+        transition: all 500ms ease;
+        padding: 20px 15px;
+        background-color: transparent;
+        .container {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            max-width: 1140px;
+            .headerContainer{
+                .linkContainer {
+                    display: flex;
+                    align-items: center;
+                    height: 56px;
+                    .link {
+                        font-size: 1.6rem;
+                        font-weight: 600;
+                        color: #0078ff;
+                        text-decoration: none;
+                    }
+                }
+    
+                .btnMenuSidebar {
+                    display: none;
+                }
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+    }
+}
+
+@include breakpoint(tactil) {
+    .header {
+        .navigation {
+            &.active {
+                transition: all 500ms ease;
+                background-color: white;
+            }
+            .container {
+                display: block;
+                .headerContainer {
+                    .linkContainer {
+                        display: inline-flex;
+                        align-items: center;
+                        height: 56px;
+                        width: 100%;
+                    }
+    
+                    .btnMenuSidebarContainer {
+                        position: absolute;
+                        top: inherit;
+                        right: 25px;
+                        bottom: inherit;
+                        left: inherit;
+                        display: inline-flex;
+                        flex-direction: row;
+                        height: 56px;
+                        .btnMenuSidebar {
+                            border: none;
+                            background-color: transparent;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            transition: all .3s ease-in-out;
+                            padding: 0;
+                            width: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(mobile) {
+    .header {
+        .navigation {
+            .container {
+                .headerContainer {
+                    .linkContainer {
+                        .link {
+                            font-size: 1.4rem;
+                        }
+                    }
+    
+                    .btnMenuSidebarContainer {
+                        .btnMenuSidebar {
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
