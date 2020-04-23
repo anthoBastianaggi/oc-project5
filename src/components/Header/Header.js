@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './Header.module.scss';
 import NavbarRight from './navbar-right/NavbarRight';
 import Sidebar from './sidebar/Sidebar';
-import Bars from '../../assets/icons/bars-solid.svg';
-import Close from '../../assets/icons/times-solid.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '../../../node_modules/@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
 import { useRouteMatch } from 'react-router-dom';
 
@@ -25,9 +25,9 @@ const Header = () => {
     <div className={styles.btnMenuSidebarContainer}>
       <button className={styles.btnMenuSidebar} onClick={openMenuBurger}>
         {menuSidebarOpen ?
-          <img className={styles.iconMenu} src={Close} alt="icon-close" />
+          <FontAwesomeIcon className={styles.iconMenu} icon={faTimes} />
           : 
-          <img className={styles.iconMenu} src={Bars} alt="icon-bars" /> 
+          <FontAwesomeIcon className={styles.iconMenu} icon={faBars} /> 
         }
       </button>
     </div>
