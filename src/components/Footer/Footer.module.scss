@@ -57,7 +57,15 @@
                                 &:last-child {
                                     margin-right: 0;
                                 }
-    
+
+                                .buttonFlag {
+                                    height: 30px;
+                                    padding: 0;
+                                    background-color: transparent;
+                                    border: none;
+                                    border-radius: 0;
+                                }
+                               
                                 a {
                                     text-decoration: none;
         
