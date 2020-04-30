@@ -1,12 +1,9 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import cx from 'classnames';
+import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from "../../../node_modules/@fortawesome/free-brands-svg-icons";
-import FlagFrance from '../../assets/icons/flag-france.svg';
-import FlagEngland from '../../assets/icons/flag-england.svg';
-import FlagItaly from '../../assets/icons/flag-italy.svg';
-import FlagCorsica from '../../assets/icons/flag-corsica.svg';
 
 const socialItems = [
     { id: "facebook", href: "https://www.facebook.com/anthony.bastianaggi", icon: faFacebook },
@@ -16,10 +13,10 @@ const socialItems = [
 ];
 
 const interfaceLang = [
-    { id: "french", alt: "france-icon" , icon: FlagFrance },
-    { id: "english", alt: "england-icon" , icon: FlagEngland },
-    { id: "italian", alt: "italy-icon" , icon: FlagItaly },
-    { id: "corsican", alt: "corse-icon" , icon: FlagCorsica }
+    { id: "french", alt: "france-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-france" /> },
+    { id: "english", alt: "england-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-england" /> },
+    { id: "italian", alt: "italy-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-italy" /> },
+    { id: "corsican", alt: "corse-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-corsica" /> }
 ];
 
 const infoMenuItems = [
@@ -68,7 +65,7 @@ const Footer = () => {
                                 {interfaceLang.map((item) => {
                                     return(
                                         <li key={item.id} className={styles.item}>
-                                            <img className={styles.icon} src={item.icon} alt={item.alt} />
+                                            {item.icon}
                                         </li>
                                     )
                                 })} 
