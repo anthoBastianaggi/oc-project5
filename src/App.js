@@ -1,15 +1,17 @@
 import React from 'react';
 import styles from './App.module.scss';
+import './assets/sass/main.scss';
 import Portfolio from './views/Portfolio/Portfolio';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 function App() {
  
   return (
     <BrowserRouter>
       <div className={styles.app}>
         <Switch>
-          <Route exact path={"/"} component={() => <Portfolio />} />
-          <Route exact path={"/home"} component={() => <Portfolio />} />
+          <Redirect exact from="/" to="/home" />
+          <Route path={"/home"} component={() => <Portfolio />} />
+          <Route path={"/:id"} component={() => <Portfolio />} />
         </Switch>
       </div>
     </BrowserRouter>

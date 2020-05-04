@@ -1,0 +1,206 @@
+@import '../../assets/sass/modules/mixins.scss';
+
+.footer {
+    .container{
+        display: flex;
+        background-color: #343a40;
+        color: #dee2e6;
+
+        .contentFooter {
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%;
+            box-sizing: border-box;
+            padding: 30px 0 30px 15px;
+
+            .block {
+                margin-bottom: 2rem;
+                text-align: justify;
+                display: inline-flex;
+                max-width: 50%;
+                width: 100%;
+                &:nth-child(3), &:nth-child(4) {
+                    margin-bottom: 0;
+                  }
+                .blockContainer {
+                    width: 100%;
+                    .title {
+                        font-weight: 400;
+                        font-size: 20px;
+                        color: #868e96;
+                        margin-top: 0;
+                        text-align: center;
+                    }
+    
+                    .hrFoot {
+                        width: 80%;
+                        margin: 10px auto;
+                        border: 1px solid #464e55;
+                    }
+    
+                    .projectAbout {
+                        text-align: justify;
+                        width: 80%;
+                        margin: 10px auto;
+                    }
+    
+                    .lang, .socials {
+                        margin: auto;
+                        .langItem, .socialItem {
+                            list-style: none;
+                            display: flex;
+                            padding-left: 0;
+                            justify-content: center;
+    
+                            .item {
+                                margin-right: 10px;
+                                height: 30px;
+                                &:last-child {
+                                    margin-right: 0;
+                                }
+
+                                .buttonFlag {
+                                    height: 30px;
+                                    padding: 0;
+                                    background-color: transparent;
+                                    border: none;
+                                    border-radius: 0;
+                                }
+
+                                .iconSocials {
+                                    display: block;
+                                    width: 30px;
+                                    height: 30px;
+                                    color: white;
+                                }
+                            }
+                        }           
+                    }  
+
+                    .infoMenu {
+                        text-align: justify;
+                        width: 80%;
+                        margin: 10px auto;
+                        .infoMenuItems {
+                            list-style: none;
+                            padding-left: 0;
+    
+                            .item span {
+                                color: #dee2e6;
+                                &:hover {
+                                    color: white;
+                                }
+                            }
+                        }           
+                    }  
+    
+                    .formHorizontal {
+                        width: 80%;
+                        margin: 10px auto;
+                        .formContainer {
+                            outline: none;
+                            position: relative;
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: stretch;
+                            width: 100%;
+                            text-align: left;
+                            .formControl {
+                                border: 1px solid #ddd;
+                                font-size: 14px;
+                                width: 100%;
+                                background-color: #fff;
+                                text-align: center;
+                                color: #999;
+                                padding: 12px;
+                                border-radius: 3px 0px 0px 3px;
+                            }
+    
+                            .btnSubmit {
+                                text-align: center;
+                                cursor: pointer;
+                                font-weight: 700;
+                                font-size: 14px;
+                                color: #fff;
+                                border: none;
+                                background-color: #0078ff;
+                                padding: 13px;
+                                border-radius: 0px 3px 3px 0px;
+                                overflow: hidden;
+                                margin: 10px auto 0px auto;
+                            }
+                        }
+                    }
+                }
+            }   
+        }
+
+        .contentInfo {
+            flex: 0 0 33.333334%;
+            max-width: 33.333334%;
+            padding: 30px 15px 30px 0;
+
+            .block {
+                max-width: 100%;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .copyright {
+        display: grid;
+        background-color: #212529;
+        padding: 20px 30px 20px 30px;
+        color: #868e96;
+        flex:  1 100%;
+    }
+}
+
+@include breakpoint(tablet) {
+    .footer {
+        .container{
+            display: block;
+    
+            .contentFooter {
+                max-width: 100%;
+                padding: 30px 15px 0 15px;
+                .block {
+                    &:nth-child(3), &:nth-child(4) {
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+    
+            .contentInfo {
+                max-width: 52%;
+                box-sizing: border-box;
+                padding: 0 15px 30px 15px;
+            }
+        }
+    }
+}
+
+@include breakpoint(mobile) {
+    .footer {
+        .container{
+            display: block;
+    
+            .contentFooter {
+                max-width: 100%;
+                padding: 30px 15px 0 15px;
+                .block {
+                    display: block;
+                    max-width: 100%;
+                    &:nth-child(3), &:nth-child(4) {
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+    
+            .contentInfo {
+                max-width: 100%;
+                box-sizing: border-box;
+                padding: 0 15px 30px 15px;
+            }
+        }
+    }
+}

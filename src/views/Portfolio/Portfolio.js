@@ -1,13 +1,14 @@
 import React from 'react';
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import styles from './Portfolio.module.scss';
 
-function Portfolio() {
+const Portfolio = () => {
   return (
-    <div>
-        <Header />
-        <div>
-            Bonjour les gens
-        </div>
+    <div className={styles.layout}>
+      <Header />
+      <div className={styles.content}></div>
+      <Footer />
     </div>
   );
 }
