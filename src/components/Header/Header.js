@@ -63,9 +63,7 @@ const Header = () => {
       <nav className={cx({ [styles.active] : menuSidebarOpen }, styles.navigation)}>
         <div className={styles.container}>
           <div className={styles.headerContainer}>
-            <div className={styles.linkContainer}>
-              <a className={styles.link} href="/">BASTIANAGGI Anthony</a>
-            </div>
+              <span className={styles.headerTitle}>BASTIANAGGI Anthony</span>
             <BtnMenuBurger />
           </div>
           <Sidebar

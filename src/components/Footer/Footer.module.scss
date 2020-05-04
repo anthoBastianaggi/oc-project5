@@ -65,20 +65,12 @@
                                     border: none;
                                     border-radius: 0;
                                 }
-                               
-                                a {
-                                    text-decoration: none;
-        
-                                    .iconSocials {
-                                        font-size: 30px;
-                                        width: 30px;
-                                        color: white;
-                                    }
-                                }
-    
-                                .icon {
-                                    width: 35px;
-                                    height: 25px;
+
+                                .iconSocials {
+                                    display: block;
+                                    width: 30px;
+                                    height: 30px;
+                                    color: white;
                                 }
                             }
                         }           
@@ -92,8 +84,7 @@
                             list-style: none;
                             padding-left: 0;
     
-                            .item a {
-                                text-decoration: none;
+                            .item span {
                                 color: #dee2e6;
                                 &:hover {
                                     color: white;

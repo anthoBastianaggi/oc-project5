@@ -14,16 +14,14 @@
             justify-content: space-between;
             max-width: 1140px;
             .headerContainer{
-                .linkContainer {
-                    display: flex;
-                    align-items: center;
-                    height: 56px;
-                    .link {
-                        font-size: 1.6rem;
-                        font-weight: 600;
-                        color: #0078ff;
-                        text-decoration: none;
-                    }
+                display: flex;
+                align-items: center;
+                height: 56px;
+                .headerTitle {
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    color: #0078ff;
+                    text-decoration: none;
                 }
     
                 .btnMenuSidebar {
@@ -48,12 +46,10 @@
             .container {
                 display: block;
                 .headerContainer {
-                    .linkContainer {
-                        display: inline-flex;
-                        align-items: center;
-                        height: 56px;
-                        width: 100%;
-                    }
+                    display: inline-flex;
+                    align-items: center;
+                    height: 56px;
+                    width: 100%;
     
                     .btnMenuSidebarContainer {
                         position: absolute;
@@ -91,10 +87,8 @@
         .navigation {
             .container {
                 .headerContainer {
-                    .linkContainer {
-                        .link {
-                            font-size: 1.4rem;
-                        }
+                    .headerTitle {
+                        font-size: 1.4rem;
                     }
     
                     .btnMenuSidebarContainer {
