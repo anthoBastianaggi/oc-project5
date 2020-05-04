@@ -16,8 +16,6 @@
                 font-size: 16px;
                 text-transform: uppercase;
                 font-weight: 600;
-                text-decoration: none;
-                color: #0078ff;
                 &:hover {
                     &::before {
                         content: '';
@@ -41,6 +39,9 @@
                         background-color: #0078ff;
                         width: 35px;
                     }
+                }
+                span {
+                    color: #0078ff;
                 }
             }
         }  

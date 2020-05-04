@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Footer.module.scss';
 import cx from 'classnames';
 import Button from '../Button/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from '../Link/Link';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from "../../../node_modules/@fortawesome/free-brands-svg-icons";
 
 const socialItems = [
@@ -83,7 +83,7 @@ const Footer = () => {
                                 {socialItems.map((item) => {
                                     return(
                                         <li key={item.id} className={styles.item}>
-                                            <a href={item.href}><FontAwesomeIcon className={styles.iconSocials} icon={item.icon} /></a>
+                                             <Link href={item.href} id={item.id} className={styles.iconSocials} icon={item.icon} external />
                                         </li>
                                     )
                                 })} 
@@ -103,7 +103,7 @@ const Footer = () => {
                                 {infoMenuItems.map((item) => {
                                     return(
                                         <li key={item.id} className={styles.item}>
-                                            <a href={item.href}>{item.label}</a>
+                                            <Link href={item.href} id={item.id} label={item.label} external />
                                         </li>
                                     )
                                 })} 
