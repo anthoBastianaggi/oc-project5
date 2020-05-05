@@ -24,7 +24,7 @@
                         bottom: 0;
                         left: 0;
                         height: 2px;
-                        background-color: #0078ff;
+                        background-color: white;
                         width: 35px;
                     }
                 }
@@ -36,8 +36,24 @@
                         bottom: 0;
                         left: 0;
                         height: 2px;
-                        background-color: #0078ff;
+                        background-color: white;
                         width: 35px;
+                    }
+                }
+                span {
+                    color: white;
+                }
+            }
+
+            .itemsScroll {
+                &:hover {
+                    &::before {
+                        background-color: #0078ff;
+                    }
+                }
+                &.active {
+                    &::before {
+                        background-color: #0078ff;
                     }
                 }
                 span {

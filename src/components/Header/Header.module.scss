@@ -2,12 +2,13 @@
 
 .header {
     background-color: transparent;
-    height: 100%;
     width: 100%;
+    position: fixed;
+    z-index: 999;
+    transition: all 500ms ease;
     .navigation {
-        transition: all 500ms ease;
         padding: 20px 15px;
-        background-color: transparent;
+        transition: all 500ms ease;
         .container {
             margin: 0 auto;
             display: flex;
@@ -20,7 +21,7 @@
                 .headerTitle {
                     font-size: 1.6rem;
                     font-weight: 600;
-                    color: #0078ff;
+                    color: white;
                     text-decoration: none;
                 }
     
@@ -36,12 +37,39 @@
     }
 }
 
+.headerScroll {
+    background-color: white;
+    .navigation {
+        .container {
+            .headerContainer {
+                .headerTitle {
+                    color: #0078ff;
+                }
+            }
+        }
+    }
+}
+
 @include breakpoint(tactil) {
     .header {
         .navigation {
             &.active {
-                transition: all 500ms ease;
                 background-color: white;
+                .container {
+                    .headerContainer {
+                        .btnMenuSidebarContainer {
+                            .btnMenuSidebar {
+                                .iconMenu {
+                                    color: black;
+                                }
+                            }
+                        }
+
+                        .headerTitle {
+                            color: #0078ff;
+                        }
+                    }
+                }
             }
             .container {
                 display: block;
@@ -73,6 +101,43 @@
 
                             .iconMenu {
                                 font-size: 25px;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+                .sidebarActive {
+                    display: block;
+                    text-align: left;
+                    position: relative;
+                }
+            }
+        }
+    }
+
+    .headerScroll {
+        .navigation {
+            &.active {
+                .container {
+                    .headerContainer {
+                        .btnMenuSidebarContainer {
+                            .btnMenuSidebar {
+                                .iconMenu {
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .container {
+                .headerContainer {
+                    .btnMenuSidebarContainer {
+                        .btnMenuSidebar {
+                            .iconMenu {
+                                color: black;
                             }
                         }
                     }

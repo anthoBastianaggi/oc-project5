@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './Sidebar.module.scss';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 
 const renderMenuItems = (items) => (
     <ul className={styles.navigationRight}>
@@ -29,7 +28,7 @@ const Sidebar = (props) => {
     useLockBodyScroll();
 
     return (
-        <div className={cx(className, { [styles.sidebarActive]: opened })}>
+        <div className={className}>
             <div className={styles.sidebarMenu} ref={(ref) => props.setSidebarRef(ref)}>
                 <div className={styles.sidebarContainer}>
                     {renderMenuItems(data)}
