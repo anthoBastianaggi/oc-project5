@@ -1,0 +1,171 @@
+@import '../../assets/sass/modules/mixins.scss';
+
+.header {
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    transition: all 500ms ease;
+    .navigation {
+        padding: 20px 15px;
+        transition: all 500ms ease;
+        .container {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            max-width: 1140px;
+            .headerContainer{
+                display: flex;
+                align-items: center;
+                height: 56px;
+                .headerTitle {
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                    color: white;
+                    text-decoration: none;
+                }
+    
+                .btnMenuSidebar {
+                    display: none;
+                }
+            }
+
+            .sidebar {
+                display: none;
+            }
+        }
+    }
+}
+
+.headerScroll {
+    background-color: white;
+    .navigation {
+        .container {
+            .headerContainer {
+                .headerTitle {
+                    color: #0078ff;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(tactil) {
+    .header {
+        .navigation {
+            &.active {
+                background-color: white;
+                .container {
+                    .headerContainer {
+                        .btnMenuSidebarContainer {
+                            .btnMenuSidebar {
+                                .iconMenu {
+                                    color: black;
+                                }
+                            }
+                        }
+
+                        .headerTitle {
+                            color: #0078ff;
+                        }
+                    }
+                }
+            }
+            .container {
+                display: block;
+                .headerContainer {
+                    display: inline-flex;
+                    align-items: center;
+                    height: 56px;
+                    width: 100%;
+    
+                    .btnMenuSidebarContainer {
+                        position: absolute;
+                        top: inherit;
+                        right: 25px;
+                        bottom: inherit;
+                        left: inherit;
+                        display: inline-flex;
+                        flex-direction: row;
+                        height: 56px;
+                        .btnMenuSidebar {
+                            border: none;
+                            background-color: transparent;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+                            transition: all .3s ease-in-out;
+                            padding: 0;
+                            width: 25px;
+
+                            .iconMenu {
+                                font-size: 25px;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+                .sidebarActive {
+                    display: block;
+                    text-align: left;
+                    position: relative;
+                }
+            }
+        }
+    }
+
+    .headerScroll {
+        .navigation {
+            &.active {
+                .container {
+                    .headerContainer {
+                        .btnMenuSidebarContainer {
+                            .btnMenuSidebar {
+                                .iconMenu {
+                                    color: black;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .container {
+                .headerContainer {
+                    .btnMenuSidebarContainer {
+                        .btnMenuSidebar {
+                            .iconMenu {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(mobile) {
+    .header {
+        .navigation {
+            .container {
+                .headerContainer {
+                    .headerTitle {
+                        font-size: 1.4rem;
+                    }
+    
+                    .btnMenuSidebarContainer {
+                        .btnMenuSidebar {
+                            width: 20px;
+                            .iconMenu {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
