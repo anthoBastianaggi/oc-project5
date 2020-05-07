@@ -1,0 +1,330 @@
+@import '../../../../assets/sass/modules/mixins.scss';
+
+.sectionAbout {
+    padding-top: 4rem;
+    display: block;
+    .aboutContainer {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 1140px;
+        .aboutContainerTitle {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+            justify-content: center;
+            .contentTitle {
+                margin-bottom: 4rem;
+                text-align: center;
+                .title {
+                    font-size: 3rem;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color: #1e1e1e;
+                    margin-bottom: .5rem;
+                    line-height: 1.2;
+                    margin-top: 0;
+                }
+
+                .subtitle {
+                    color: #4e4e4e;
+                    margin-top: 0;
+                    margin-bottom: 1rem;
+                }
+
+                .line {
+                    width: 40px;
+                    height: 5px;
+                    background-color: #0078ff;
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .aboutContainerContent {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+            .aboutContent {
+                padding: 4rem 3rem;
+                position: relative;
+                background-color: #fff;
+                margin-bottom: 3rem;
+                z-index: 2;
+                box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+                width: 100%;
+                .wrapper {
+                    display: flex;
+                    .columnLeft {
+                        flex: 1 1 71%;
+                    }
+
+                    .columnRight {
+                        flex: 1 1 63%;
+                    }
+
+                    .columnLeft, .columnRight {
+                        min-width: 0;
+                        display: flex;
+                        flex-direction: column;
+                        .itemContent {
+                            flex-grow: 1;
+                            .item {
+                                margin-top: 0;
+                                text-align: justify;
+                                font-size: 1.25rem;
+                                font-weight: 300;
+                            }
+
+                            .itemContainerButton {
+                                justify-content: center;
+                                align-content: center;
+                                align-items: center;
+                                display: flex;
+                                position: relative;
+                                min-height: 1px;
+                                padding-right: 15px;
+                                padding-left: 15px;
+
+                                .btnContactMe {
+                                    min-width: 180px;
+                                    margin-bottom: 1rem;
+                                    text-transform: uppercase;
+                                    padding: .3rem .6rem;
+                                    text-align: center;
+                                    font-size: 1rem;
+                                    border: 1px solid transparent;
+                                    transition: all 500ms ease;
+                                    height: 35.6px;
+                                }
+                            }
+
+                            .itemContainer {
+                                display: flex;
+                                flex-wrap: wrap;
+                                align-items: center;
+                                .imageContainer {
+                                    position: relative;
+                                    min-height: 1px;
+                                    padding-right: 15px;
+
+                                    img {
+                                        border-radius: .25rem;
+                                    }
+                                }
+
+                                .aboutInfoContainer {
+                                    padding-right: 15px;
+                                    padding-left: 15px;
+                                }
+
+                                .aboutBtnInfoContainer {
+                                    max-width: 66.666667%;
+                                }
+    
+                                .aboutInfoContainer, .aboutBtnInfoContainer {
+                                    position: relative;
+                                    min-height: 1px;
+
+                                    .blockInfo {
+                                        .info {
+                                            text-align: left;
+                                            margin-top: 0;
+                                            .infoTitle {
+                                                font-weight: 600;
+                                                color: #1e1e1e;
+                                                font-size: 1.1rem;
+                                            }
+                                        }
+    
+                                        .containerButton {
+                                            justify-content: center;
+                                            align-content: center;
+                                            align-items: center;
+                                            display: flex;
+                                            position: relative;
+                                            min-height: 1px;
+                                            padding-right: 15px;
+                                            padding-left: 15px;
+    
+                                            .btnVisual, .btnDownload{
+                                                min-width: 180px;
+                                                margin-bottom: 1rem;
+                                                text-transform: uppercase;
+                                                padding: .3rem .6rem;
+                                                text-align: center;
+                                                font-size: 1rem;
+                                                border: 1px solid transparent;
+                                                transition: all 500ms ease;
+                                                height: 35.6px;
+                                            }
+    
+                                            .btnDownload {
+                                                margin-bottom: 0;
+                                            }
+                                        }
+                                    }
+                                    .info {
+                                        text-align: left;
+                                        margin-top: 0;
+                                        .infoTitle {
+                                            font-weight: 600;
+                                            color: #1e1e1e;
+                                            font-size: 1.1rem;
+                                        }
+                                    }
+
+                                    .containerButton {
+                                        justify-content: center;
+                                        align-content: center;
+                                        align-items: center;
+                                        display: flex;
+                                        position: relative;
+                                        min-height: 1px;
+                                        padding-right: 15px;
+                                        padding-left: 15px;
+
+                                        .btnVisual, .btnDownload{
+                                            min-width: 180px;
+                                            margin-bottom: 1rem;
+                                            text-transform: uppercase;
+                                            padding: .3rem .6rem;
+                                            text-align: center;
+                                            font-size: 1rem;
+                                            border: 1px solid transparent;
+                                            transition: all 500ms ease;
+                                            height: 35.6px;
+                                        }
+
+                                        .btnDownload {
+                                            margin-bottom: 0;
+                                        }
+                                    }
+                                }
+                            }     
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include breakpoint(laptop) {
+    .sectionAbout {
+        .aboutContainer {
+            max-width: 920px;
+        }
+        .aboutContainerContent {
+            .aboutContent {
+                .wrapper {
+                    flex-direction: column;
+                    .columnLeft, .columnRight {
+                        display: contents !important;
+                        .itemContent {
+                            .itemContainer {
+                                .aboutBtnInfoContainer {
+                                    width: 100%;
+                                    max-width: 100% !important;
+
+                                    .blockInfo {
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        margin: 2rem 0 0 0;
+                                        &:last-child {
+                                            margin: 0;                                      
+                                        }
+                                    }
+                                }
+                            }     
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include breakpoint(tactil) {
+    .sectionAbout {
+        .aboutContainer {
+            @media screen and (min-width: 770px) and ( max-width: 1080px) {
+                 max-width: 720px !important;
+            }
+            .aboutContainerContent {
+                .aboutContent {
+                    .wrapper {
+                        flex-direction: column;
+                        .columnLeft, .columnRight {
+                            display: contents;
+                            .itemContent {
+                                .itemContainer {
+                                    .aboutBtnInfoContainer {
+                                        width: 100%;
+                                        max-width: 100%;
+    
+                                        .blockInfo {
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            margin: 2rem 0 0 0;
+                                            &:last-child {
+                                                margin: 0;                                      
+                                            }
+                                            @media screen and ( max-width: 769px) {
+                                               flex-direction: column;
+                                           }
+                                        }
+                                    }
+                                }     
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(tablet) {
+    .sectionAbout {
+        .aboutContainer {
+            max-width: 600px;
+        }
+    }
+}
+
+@include breakpoint(mobile) {
+    .sectionAbout {
+        .aboutContainer {
+            .aboutContainerContent {
+                .aboutContent {
+                    padding: 3rem 2rem;
+                    .wrapper {
+                        .columnLeft, .columnRight {
+                            .itemContent {
+                                .itemContainer { 
+                                    display: block;
+                                    .imageContainer {
+                                        margin-bottom: 1rem;
+                                    }
+                                    .aboutInfoContainer {
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
