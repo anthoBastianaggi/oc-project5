@@ -1,6 +1,6 @@
 @import '../../../../assets/sass/modules/mixins.scss';
 
-.sectionHome {
+.section {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -22,7 +22,7 @@
         opacity: .9;
     }
 
-    .homeContent {
+    .container {
         width: 100%;
         height: 100%;
         display: flex;
@@ -30,7 +30,7 @@
         justify-content: center;
         text-align: center;
         position: absolute;
-        .homeContainer {
+        .content {
             width: 100%;
             padding-right: 15px;
             padding-left: 15px;
@@ -56,9 +56,9 @@
 }
 
 @include breakpoint(mobile) {
-    .sectionHome {
-        .homeContent {
-            .homeContainer {
+    .section {
+        .container {
+            .content {
                 .title {
                     font-size: 3rem;
                 }

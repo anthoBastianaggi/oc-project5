@@ -5,10 +5,10 @@ import Background from '../../../../assets/images/homepage.jpg';
 
 const Home = () => {
   return (
-    <section id="home" className={styles.sectionHome} style={{backgroundImage: `url(${Background})` }}>
+    <section id="home" className={styles.section} style={{backgroundImage: `url(${Background})` }}>
         <div className={styles.overlay}></div>
-        <div className={styles.homeContent}>
-            <div className={styles.homeContainer}>
+        <div className={styles.container}>
+            <div className={styles.content}>
                 <h1 className={styles.title}>Développeur Web Junior</h1>
                 <p className={styles.subtitle}>
                     <Typed
