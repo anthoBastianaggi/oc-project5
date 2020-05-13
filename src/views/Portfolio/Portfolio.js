@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Home from '../Portfolio/Sections/Home/Home';
 import About from '../Portfolio/Sections/About/About';
+import Skills from '../Portfolio/Sections/Skills/Skills';
 import styles from './Portfolio.module.scss';
 
 const Portfolio = () => {
@@ -12,6 +13,7 @@ const Portfolio = () => {
       <div className={styles.content}>
         <Home />
         <About />
+        <Skills />
       </div>
       <Footer />
     </div>
