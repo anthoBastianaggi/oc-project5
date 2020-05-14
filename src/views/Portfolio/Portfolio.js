@@ -4,6 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import Home from '../Portfolio/Sections/Home/Home';
 import About from '../Portfolio/Sections/About/About';
 import Skills from '../Portfolio/Sections/Skills/Skills';
+import Services from '../Portfolio/Sections/Services/Services';
 import styles from './Portfolio.module.scss';
 
 const Portfolio = () => {
@@ -14,6 +15,7 @@ const Portfolio = () => {
         <Home />
         <About />
         <Skills />
+        <Services />
       </div>
       <Footer />
     </div>

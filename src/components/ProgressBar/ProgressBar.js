@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './ProgressBar.module.scss';
 
 const ProgressBar = ({ percentage, title }) => {
 	const [style, setStyle] = React.useState({});
-	
-	setTimeout(() => {
-		const newStyle = {
-			opacity: 1,
-			width: `${percentage}%`
-		}
-		
-		setStyle(newStyle);
-	}, 200);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			const newStyle = {
+				opacity: 1,
+				width: `${percentage}%`
+			}
+			
+			setStyle(newStyle);
+		}, 200);
+		return () => clearTimeout(timer);
+	  }, []);
 	
 	return (
 		<div className={styles.progressBar}>
