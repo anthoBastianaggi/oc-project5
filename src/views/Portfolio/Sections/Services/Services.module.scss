@@ -1,0 +1,27 @@
+@import '../../../../assets/sass/modules/mixins.scss';
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    min-height: 1px;
+    .container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        .item {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@include breakpoint(mobile) {
+    .content {
+        .container {
+            .item {
+                display: block;
+            }
+        }  
+    }
+}
