@@ -5,6 +5,7 @@ import Home from '../Portfolio/Sections/Home/Home';
 import About from '../Portfolio/Sections/About/About';
 import Skills from '../Portfolio/Sections/Skills/Skills';
 import Services from '../Portfolio/Sections/Services/Services';
+import Project from '../Portfolio/Sections/Project/Project';
 import styles from './Portfolio.module.scss';
 
 const Portfolio = () => {
@@ -16,6 +17,7 @@ const Portfolio = () => {
         <About />
         <Skills />
         <Services />
+        <Project />
       </div>
       <Footer />
     </div>

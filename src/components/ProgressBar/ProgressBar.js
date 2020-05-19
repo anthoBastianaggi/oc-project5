@@ -14,7 +14,7 @@ const ProgressBar = ({ percentage, title }) => {
 			setStyle(newStyle);
 		}, 200);
 		return () => clearTimeout(timer);
-	  }, []);
+	  }, [ percentage ]);
 	
 	return (
 		<div className={styles.progressBar}>

@@ -8,23 +8,23 @@ import Link from '../Link/Link';
 const Card = ({ image, alt, title, description, category, date, className, link, linkCategory }) => {
     return (
         <div className={cx(styles.card, className)}>
-            <div className={styles.cardContainer}>  
-                <div className={styles.cardImg}>
-                    <img src={image} alt={alt} className={styles.imgFluid} />
-                    <div className={styles.cardHoverDescription}>
+            <div className={styles.container}>  
+                <div className={styles.blockImage}>
+                    <img src={image} alt={alt} className={styles.image} />
+                    <div className={styles.descriptionHover}>
                         <span className={styles.description}>{description}</span>
                     </div>
                 </div>
-                <div className={styles.cardContent}>
-                    <div className={styles.cardContentContainer}>
-                        <div className={styles.cardContentDescription}>
-                            <h2 className={styles.cardTitle}>{title}</h2>
-                            <div className={styles.cardDescription}>
-                                <Link href={linkCategory} className={styles.cardCategory} label={category} /> / <span className={styles.cardDate}>{date}</span>
+                <div className={styles.content}>
+                    <div className={styles.blockContainer}>
+                        <div className={styles.blockDescription}>
+                            <h2 className={styles.title}>{title}</h2>
+                            <div className={styles.description}>
+                                <Link href={linkCategory} className={styles.category} label={category} /> / <span className={styles.cardDate}>{date}</span>
                             </div>
                         </div>
-                        <div className={styles.cardIcon}>
-                            <div className={styles.cardIconContainer}>
+                        <div className={styles.blockIcon}>
+                            <div className={styles.iconContainer}>
                                 <Link href={link} className={styles.icon} icon={faPlus} external />
                             </div>
                         </div>
