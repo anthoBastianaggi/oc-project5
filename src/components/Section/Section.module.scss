@@ -75,6 +75,7 @@
 @include breakpoint(mobile) {
     .section {
         .container {
+            max-width: 450px;
             .blockTitle {
                 .title {
                     font-size: 2.5rem;

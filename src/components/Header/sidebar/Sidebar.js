@@ -1,12 +1,18 @@
 import React from 'react';
 import styles from './Sidebar.module.scss';
 import PropTypes from 'prop-types';
+import Link from '../../Link/Link';
 
 const renderMenuItems = (items) => (
     <ul className={styles.navigationRight}>
     {items.map((item) => (   
         <li key={item.id} className={styles.menuListItems}>
-            <a href={item.href} className={styles.items}>{item.label}</a>
+            <Link 
+                id={item.id}
+                href={item.href} 
+                className={styles.items} 
+                label={item.label} 
+            />
         </li>
     ))}
 </ul>

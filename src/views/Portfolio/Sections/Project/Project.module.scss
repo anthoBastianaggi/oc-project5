@@ -1,0 +1,81 @@
+@import '../../../../assets/sass/modules/mixins.scss';
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    min-height: 1px;
+    .container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        .navbarPortfolio {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 15px 1rem;
+            flex-flow: row nowrap;
+            justify-content: flex-start;
+            .navbarContainer {
+                flex-wrap: nowrap;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                padding: 0 15px;
+                margin: 0 auto;
+                .navbarContent {
+                    flex-direction: column;
+                    display: flex !important;
+                    flex-basis: auto;
+                    justify-content: flex-end !important;
+                    flex-grow: 1;
+                    align-items: center;
+                    .navbarList {
+                        display: flex;
+                        flex-direction: row;
+                        padding-left: 0;
+                        list-style: none;
+                        margin-top: 0;
+                        .navbarItem {
+                            position: relative;
+                            padding: .5rem 10px;
+                            a {
+                                font-size: 16px;
+                                text-transform: uppercase;
+                                font-weight: 600;
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    margin-left: 10px;
+                                    bottom: 0;
+                                    left: 0;
+                                    height: 2px;
+                                    background-color: #0078ff;
+                                    width: 35px;
+                                }
+                                span {
+                                    color: #0078ff;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .item {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@include breakpoint(mobile) {
+    .content {
+        .container {
+            .item {
+                display: block;
+            }
+        }  
+    }
+}
