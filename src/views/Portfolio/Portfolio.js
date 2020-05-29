@@ -12,7 +12,7 @@ const Portfolio = () => {
   return (
     <div className={styles.layout}>
       <Header />
-      <div className={styles.content}>
+      <div className={styles.content} id="content">
         <Home />
         <About />
         <Skills />

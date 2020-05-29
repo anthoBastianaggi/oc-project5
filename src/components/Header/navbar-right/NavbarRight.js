@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Link from '../../Link/Link';
 
-const renderMenuItems = (props) => {
+const renderMenuItems = ( props ) => {
     const { data, scrolled }  = props;
     return (
         <ul className={styles.navigationRight}>
@@ -22,7 +22,7 @@ const renderMenuItems = (props) => {
     )  
 };
 
-const NavbarRight = (props) => {
+const NavbarRight = (props) => { 
     return (
         <div className={styles.navbarRight}>
             {renderMenuItems(props)}

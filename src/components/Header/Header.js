@@ -14,12 +14,12 @@ const Header = () => {
   const container = useRef();
   
   const menuItems = [
-    { id: "home", href: "/home", label: "home", isActive:  useRouteMatch("/home") },
-    { id: "about", href: "/about", label: "about", isActive:  useRouteMatch("/about") },
-    { id: "skills", href: "/skills", label: "skills", isActive:  useRouteMatch("/skills") },
-    { id: "services", href: "/services", label: "services", isActive:  useRouteMatch("/services") },
-    { id: "portfolio", href: "/portfolio", label: "portfolio", isActive:  useRouteMatch("/portfolio") },
-    { id: "contact", href: "/contact", label: "contact", isActive:  useRouteMatch("/contact") }
+    { id: "home", href: "#home", label: "home", isActive:  useRouteMatch("/home") },
+    { id: "about", href: "#about", label: "about", isActive:  useRouteMatch("/about") },
+    { id: "skills", href: "#skills", label: "skills", isActive:  useRouteMatch("/skills") },
+    { id: "services", href: "#services", label: "services", isActive:  useRouteMatch("/services") },
+    { id: "portfolio", href: "#portfolio", label: "portfolio", isActive:  useRouteMatch("/portfolio") },
+    { id: "contact", href: "#contact", label: "contact", isActive:  useRouteMatch("/contact") }
   ];
   
   const BtnMenuBurger = () => (

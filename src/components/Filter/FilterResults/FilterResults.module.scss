@@ -1,0 +1,12 @@
+@import '../../../assets/sass/modules/mixins.scss';
+
+.item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@include breakpoint(mobile) {
+    .item {
+        display: block;
+    }
+}
