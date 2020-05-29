@@ -6,6 +6,7 @@ import About from '../Portfolio/Sections/About/About';
 import Skills from '../Portfolio/Sections/Skills/Skills';
 import Services from '../Portfolio/Sections/Services/Services';
 import Project from '../Portfolio/Sections/Project/Project';
+import Contact from '../Portfolio/Sections/Contact/Contact';
 import styles from './Portfolio.module.scss';
 
 const Portfolio = () => {
@@ -18,6 +19,7 @@ const Portfolio = () => {
         <Skills />
         <Services />
         <Project />
+        <Contact />
       </div>
       <Footer />
     </div>

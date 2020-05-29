@@ -90,7 +90,7 @@ const Project = () => {
     }
 
   return (
-   <Section id="portfolio" title="Portfolio" subtitle="Voici quelques unes de mes réalisations">
+   <Section id="portfolio" title="Portfolio" subtitle="Voici quelques unes de mes réalisations" className={styles.sectionPortfolio}>
      <div className={styles.content}>
         <div className={styles.container}>
             <Filter setCategory={setCategory} data={itemData} categoryMenu={menuCategory} display={displayCategory} />
