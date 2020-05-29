@@ -1,13 +1,18 @@
 import React from 'react';
 import styles from './Sidebar.module.scss';
 import PropTypes from 'prop-types';
-import cx from 'classnames';
+import Link from '../../Link/Link';
 
 const renderMenuItems = (items) => (
     <ul className={styles.navigationRight}>
     {items.map((item) => (   
         <li key={item.id} className={styles.menuListItems}>
-            <a href={item.href} className={styles.items}>{item.label}</a>
+            <Link 
+                id={item.id}
+                href={item.href} 
+                className={styles.items} 
+                label={item.label} 
+            />
         </li>
     ))}
 </ul>
@@ -29,7 +34,7 @@ const Sidebar = (props) => {
     useLockBodyScroll();
 
     return (
-        <div className={cx(className, { [styles.sidebarActive]: opened })}>
+        <div className={className}>
             <div className={styles.sidebarMenu} ref={(ref) => props.setSidebarRef(ref)}>
                 <div className={styles.sidebarContainer}>
                     {renderMenuItems(data)}

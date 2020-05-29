@@ -1,12 +1,15 @@
+@import '../../assets/sass/modules/mixins.scss';
+
 .card {
     margin-bottom: 3rem;
-    max-width: 350px;
+    min-height: 1px;
     height: 330px;
     background-color: transparent;
     padding: 0 15px;
-    display: flex;
+    flex: 0 0 30.702%;
+    max-width: 30.702%;
 
-    .cardContainer {
+    .container {
         position: relative;
         width: 100%;
         height: 100%;
@@ -14,8 +17,8 @@
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
         &:hover {
-            .cardImg {
-                .cardHoverDescription {
+            .blockImage {
+                .descriptionHover {
                     display: block;
                     background-color: rgba(0, 0, 0, .5);
                     position: sticky;
@@ -33,32 +36,33 @@
             }
         }
 
-        .cardImg {
+        .blockImage {
             height: 220px;
             overflow: hidden;
             background-color: gray;
             display: block;
 
-            .imgFluid {
+            .image {
                 max-width: 100%;
                 height: 100%;
                 vertical-align: middle;
                 border-style: none;
+                width: 100%;
             }
 
-            .cardHoverDescription {
+            .descriptionHover {
                 display: none;
             }
         }
 
-        .cardContent {
+        .content {
             padding: 1rem;
             height: 78px;
-            .cardContentContainer {
+            .blockContainer {
                 display: flex;
                 height: 100%;
                 align-content: center;
-                .cardContentDescription {
+                .blockDescription {
                     flex: 0 0 66.666667%;
                     max-width: 66.666667%;
                     position: relative;
@@ -68,7 +72,7 @@
                     padding-left: 15px;
                     display: grid;
                     align-content: center;
-                    .cardTitle {
+                    .title {
                         font-size: 1.2rem;
                         color: #1e1e1e;
                         margin-bottom: .5rem;
@@ -78,17 +82,17 @@
                         margin-top: 0;
                     }
 
-                    .cardDescription {
+                    .description {
                         color: #4e4e4e;
                         font-size: .8rem;
-                        .cardCategory span {
+                        .category span {
                             font-size: .8rem;
                             color: #0078ff;
                         }
                     }
                 }
 
-                .cardIcon {
+                .blockIcon {
                     position: relative;
                     min-height: 1px;
                     padding-right: 15px;
@@ -97,7 +101,7 @@
                     align-content: center;
                     width: 100%;
                     justify-content: right;
-                    .cardIconContainer {
+                    .iconContainer {
                         color: #0078ff;
                         border: 1px solid #0078ff;
                         border-radius: 50%;
@@ -121,5 +125,36 @@
                 }
             }
         }
+    }
+}
+
+@include breakpoint(laptop) {
+    .card {
+        flex: 0 0 30.074%;
+        max-width: 30.074%;
+    }
+}
+
+@include breakpoint(tactil) {
+    .card {
+        @media screen and (min-width: 770px) and ( max-width: 1080px) {
+            flex: 0 0 45.835% !important;
+            max-width: 45.835% !important;
+       }       
+    }
+}
+
+
+@include breakpoint(tablet) {
+    .card {
+        flex: 0 0 45%;
+        max-width: 45%;      
+    }
+}
+
+@include breakpoint(mobile) {
+    .card {
+        width: auto;
+        max-width: 100%;      
     }
 }

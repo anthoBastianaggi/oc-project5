@@ -4,26 +4,28 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Link from '../../Link/Link';
 
-const renderMenuItems = (items) => (
-    <ul className={styles.navigationRight}>
-    {items.map((item) => (   
-        <li key={item.id} className={styles.menuListItems}>
-            <Link 
-            id={item.id}
-            href={item.href} 
-            className={cx({ [styles.active] : item.isActive }, styles.items)} 
-            label={item.label} 
-            />
-        </li>
-    ))}
-</ul>
-);
+const renderMenuItems = ( props ) => {
+    const { data, scrolled }  = props;
+    return (
+        <ul className={styles.navigationRight}>
+        {data.map((item) => (   
+            <li key={item.id} className={styles.menuListItems}>
+                <Link 
+                id={item.id}
+                href={item.href} 
+                className={cx({ [styles.active] : item.isActive }, { [styles.itemsScroll]: scrolled }, styles.items)} 
+                label={item.label} 
+                />
+            </li>
+        ))}
+    </ul>
+    )  
+};
 
-const NavbarRight = (props) => {
-    const { data }  = props;
+const NavbarRight = (props) => { 
     return (
         <div className={styles.navbarRight}>
-            {renderMenuItems(data)}
+            {renderMenuItems(props)}
         </div>
     );
 };

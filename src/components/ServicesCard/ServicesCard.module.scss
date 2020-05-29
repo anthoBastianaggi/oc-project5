@@ -1,0 +1,93 @@
+@import '../../assets/sass/modules/mixins.scss';
+
+.card {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 30.702%;
+    max-width: 30.702%;
+    .container {
+        background-color: #fff;
+        padding: 2.5rem 1.3rem;
+        border-radius: 1rem;
+        margin-bottom: 3rem;
+        min-height: 407px;
+        box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+        .blockIcon {
+            margin-bottom: 1rem;
+            color: #1e1e1e;
+            .iconContainer {
+                transition: all 500ms ease;
+                font-size: 4rem;
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                line-height: 1.55;
+                margin: 0 auto;
+                text-align: center;
+                box-shadow: 0 0 0 10px #0078ff;
+                display: block;
+                &:hover {
+                    transition: all 500ms ease;
+                    color: #fff;
+                    background-color: #0078ff;
+                    box-shadow: 0 0 0 10px #cde1f8;
+                }
+            }
+        }
+
+        .content {
+            .title {
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                text-align: center;
+                padding: .4rem 0;
+                color: #1e1e1e;
+                margin: 0 0 .5rem 0;
+                font-family: inherit;
+                font-weight: 500;
+                line-height: 1.2;
+            }
+
+            .description {
+                color: #4e4e4e;
+                text-align: center;
+                margin: 0 0 1rem 0;
+            }
+        }
+    }
+}
+
+
+@include breakpoint(laptop) {
+    .card {
+        flex: 0 0 30.074%;
+        max-width: 30.074%;
+    }
+}
+
+@include breakpoint(tactil) {
+    .card {
+        @media screen and (min-width: 770px) and ( max-width: 1080px) {
+            flex: 0 0 45.835% !important;
+            max-width: 45.835% !important;
+       }       
+    }
+}
+
+
+@include breakpoint(tablet) {
+    .card {
+        flex: 0 0 45%;
+        max-width: 45%;      
+    }
+}
+
+@include breakpoint(mobile) {
+    .card {
+        width: auto;
+        max-width: 100%;      
+    }
+}

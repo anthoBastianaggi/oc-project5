@@ -1,0 +1,173 @@
+@import '../../../../assets/sass/modules/mixins.scss';
+
+.blockContent {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    min-height: 1px;
+    padding: 0 15px;
+    .container {
+        padding: 4rem 3rem;
+        position: relative;
+        background-color: #fff;
+        z-index: 2;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        width: 100%;
+        .wrapper {
+            display: flex;
+
+            .left {
+                flex: 1 1 71%;
+            }
+
+            .right {
+                flex: 1 1 63%;
+            }
+
+            .column {
+                min-width: 0;
+                display: flex;
+                flex-direction: column;
+                .blockItem {
+                    flex-grow: 1;
+                    .blockContainer {
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        .imageContainer {
+                            position: relative;
+                            min-height: 1px;
+                            padding-right: 15px;
+
+                            img {
+                                border-radius: .25rem;
+                            }
+                        }
+
+                        .blockInfo {
+                            padding-right: 15px;
+                            padding-left: 15px;
+                            position: relative;
+                            min-height: 1px;
+                            .info {
+                                margin-top: 0;
+                                text-align: justify;
+                                .title {
+                                    font-weight: 600;
+                                    color: #1e1e1e;
+                                    font-size: 1.1rem;
+                                }
+
+                                .desc {
+                                    margin-top: 0;
+                                   
+                                    font-size: 1.25rem;
+                                    font-weight: 300;
+                                }
+                            }
+
+                            .containerButton {
+                                justify-content: center;
+                                align-content: center;
+                                align-items: center;
+                                display: flex;
+                                position: relative;
+                                min-height: 1px;
+                                padding-right: 15px;
+                                padding-left: 15px;
+                                .btnInfo {
+                                    min-width: 180px;
+                                    margin-bottom: 1rem;
+                                    text-transform: uppercase;
+                                    padding: .3rem .6rem;
+                                    text-align: center;
+                                    font-size: 1rem;
+                                    border: 1px solid transparent;
+                                    transition: all 500ms ease;
+                                    height: 35.6px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(laptop) {
+    .wrapper {
+        flex-direction: column;
+        .column {
+            display: contents !important;
+            .infoButton {
+                width: 100%;
+            }
+
+            .blockInfo {
+                .blockInfoContainer {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 2rem 0 0 0;
+                    &:last-child {
+                        margin: 0;                                      
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint(tactil) {
+    .wrapper {
+        flex-direction: column;
+        .column {
+            display: contents !important;
+
+            .infoButton {
+                width: 100%;
+            }
+
+            .blockInfo {
+                .blockInfoContainer {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 2rem 0 0 0;
+                    &:last-child {
+                        margin: 0;                                      
+                    }
+
+                    @media screen and ( max-width: 769px) {
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include breakpoint(mobile) {
+    .blockContent {
+        .container {
+            padding: 3rem 2rem;
+            .wrapper {
+                .column {
+                    .blockItem {
+                        .blockContainer { 
+                            display: block;
+                            .imageContainer {
+                                margin-bottom: 1rem;
+                            }
+                            .blockInfo {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

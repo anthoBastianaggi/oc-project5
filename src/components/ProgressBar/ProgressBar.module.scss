@@ -1,0 +1,29 @@
+.progressBar {
+    .container {
+        text-align: left;
+        .progressBarTitle {
+            text-transform: uppercase;
+        }
+        .progress {
+            margin: 10px 0 20px 0;
+            background-color: #cde1f8;
+            height: 20px;
+            border-radius: 10px;
+            box-shadow: 0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc;
+            position: relative;
+            .bar {
+                background-color: #0078ff;
+                box-shadow: 0 3px 3px -5px #fcfcfc, 0 2px 5px #bebbb9;
+                border-radius: 20px;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 0;
+                opacity: 0;
+                transition: 1s ease 0.3s;
+            }
+        }
+    }
+}

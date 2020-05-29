@@ -1,30 +1,27 @@
 @import '../../../assets/sass/modules/mixins.scss';
 
-.sidebarActive {
-    display: block !important;
-    text-align: left;
-    position: relative;
-    .sidebarMenu {
-        .sidebarContainer {
-            .navigationRight {
-                display: flex;
-                flex-direction: column;
-                padding-left: 0;
-                margin: 0;
-                list-style: none;
-                .menuListItems {
-                    padding: 5px 15px;
-                    margin: 0 -15px;
-                    &:hover {
-                        background-color: #edeeee;
-                    }
-                    .items {
-                        font-size: 16px;
-                        text-transform: uppercase;
-                        font-weight: 600;
-                        text-decoration: none;
+.sidebarMenu {
+    .sidebarContainer {
+        .navigationRight {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            margin: 0;
+            list-style: none;
+            .menuListItems {
+                padding: 5px 15px;
+                margin: 0 -15px;
+                &:hover {
+                    background-color: #edeeee;
+                }
+                .items {
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    text-decoration: none;
+                    span {
                         color: #0078ff;
-                    }
+                    }         
                 }
             }
         }
@@ -32,14 +29,12 @@
 }
 
 @include breakpoint(mobile) {
-    .sidebarActive {
-        .sidebarMenu {
-            .sidebarContainer {
-                .navigationRight {
-                    .menuListItems {
-                        .items {
-                            font-size: 14px;
-                        }
+    .sidebarMenu {
+        .sidebarContainer {
+            .navigationRight {
+                .menuListItems {
+                    .items {
+                        font-size: 14px;
                     }
                 }
             }
