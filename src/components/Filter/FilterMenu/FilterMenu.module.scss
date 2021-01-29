@@ -5,6 +5,7 @@
     overflow-x: auto;
     margin-bottom: 1rem;
     justify-content: center;
+    padding: 0 15px;
     .item {
         border: none;
         background-color: transparent;
@@ -19,9 +20,34 @@
             margin-right: 0;
         }
 
+        &.active {
+            span {
+                &::after {
+                    background-color: #0078ff;
+                    width: 35px;
+                }
+            }       
+        }
+
         span {
             width: max-content;
             color: #0078ff;
+            &:hover {
+                &::after {
+                    background-color: #0078ff;
+                    width: 35px;
+                }
+            }
+    
+            &::after {
+                content: '';
+                margin: .5rem 0 0;
+                display: block;
+                height: 2px;
+                width: 0;
+                background: transparent;
+                transition: width .5s ease, background-color .5s ease;
+            }
         }
     }
 }
@@ -30,5 +56,11 @@
 @include breakpoint(mobile) {
     .menu {
         justify-content: left;
+        .item {
+            @media screen and (max-width: 470px) {
+                padding-right: 15px;
+                margin-right: 0; 
+            }  
+        }
     }
 }

@@ -1,0 +1,21 @@
+@import '../../../assets/sass/modules/mixins.scss';
+
+.content {
+    position: relative;
+    min-height: 1px;
+    .container {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+    }
+}
+
+@include breakpoint(mobile) {
+    .content {
+        .container {
+            .item {
+                display: block;
+            }
+        }  
+    }
+}

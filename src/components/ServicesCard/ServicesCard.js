@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ServicesCard.module.scss';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Title from '../Title/Title';
 
 const ServicesCard = ({ title, description, icon }) => {
     return (
@@ -9,11 +10,11 @@ const ServicesCard = ({ title, description, icon }) => {
             <div className={styles.container}>  
                 <div className={styles.blockIcon}>
                    <div className={styles.iconContainer}>
-                        <FontAwesomeIcon className={styles.icon} icon={icon} />
+                       <FontAwesomeIcon className={styles.icon} icon={icon} />
                    </div>
                 </div>
                 <div className={styles.content}>
-                  <h3 className={styles.title}>{title}</h3>
+                  <Title as="h3" stylesTitle="stylesH3" className={styles.title}>{title}</Title>
                   <p className={styles.description}>{description}</p>
                 </div>
             </div>

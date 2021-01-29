@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Flex from '../Flex/Flex';
 import styles from './ProgressBar.module.scss';
 
 const ProgressBar = ({ percentage, title }) => {
@@ -21,9 +22,9 @@ const ProgressBar = ({ percentage, title }) => {
             <div className={styles.container}>
                 <span className={styles.progressBarTitle}>{title}</span>
                 <div className={styles.progress}>
-                    <div className={styles.bar} style={style}>
+                    <Flex className={styles.bar} style={style} center>
                         {percentage}%
-                    </div>
+                    </Flex>
                 </div>          
             </div>		
 		</div>

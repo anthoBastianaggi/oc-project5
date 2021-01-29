@@ -9,7 +9,7 @@
             margin: 0;
             list-style: none;
             .menuListItems {
-                padding: 5px 15px;
+                padding: 5px 15px 0 15px;
                 margin: 0 -15px;
                 &:hover {
                     background-color: #edeeee;
@@ -19,6 +19,30 @@
                     text-transform: uppercase;
                     font-weight: 600;
                     text-decoration: none;
+                    &:hover {
+                        &::after {
+                            background-color: #0078ff;
+                            width: 35px;
+                        }
+                    }
+
+                    &::after {
+                        content: '';
+                        margin: .5rem 0 0;
+                        display: block;
+                        height: 2px;
+                        width: 0;
+                        background: transparent;
+                        transition: width .5s ease, background-color .5s ease;
+                    }
+
+                    &.active {
+                        &::after {
+                            background-color: #0078ff;
+                            width: 35px;
+                        }
+                    }
+                    
                     span {
                         color: #0078ff;
                     }         

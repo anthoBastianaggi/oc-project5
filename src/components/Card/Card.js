@@ -4,6 +4,9 @@ import cx from 'classnames';
 import PropTypes from 'prop-types';
 import { faPlus } from '../../../node_modules/@fortawesome/free-solid-svg-icons';
 import Link from '../Link/Link';
+import Title from '../Title/Title';
+import Flex from '../Flex/Flex';
+import Button from '../Button/Button';
 
 const Card = ({ image, alt, title, description, category, date, className, link, linkCategory }) => {
     return (
@@ -16,19 +19,19 @@ const Card = ({ image, alt, title, description, category, date, className, link,
                     </div>
                 </div>
                 <div className={styles.content}>
-                    <div className={styles.blockContainer}>
+                    <Flex className={styles.blockContainer} center>
                         <div className={styles.blockDescription}>
-                            <h2 className={styles.title}>{title}</h2>
+                            <Title as="h2" stylesTitle="stylesH2" className={styles.title}>{title}</Title>
                             <div className={styles.description}>
-                                <Link href={linkCategory} className={styles.category} label={category} /> / <span className={styles.cardDate}>{date}</span>
+                                <Button type="tertiary" onClick={linkCategory} className={styles.category} label={category} /> / <span className={styles.cardDate}>{date}</span>
                             </div>
                         </div>
                         <div className={styles.blockIcon}>
-                            <div className={styles.iconContainer}>
+                            <Flex className={styles.iconContainer} center>
                                 <Link href={link} className={styles.icon} icon={faPlus} external />
-                            </div>
+                            </Flex>
                         </div>
-                    </div>
+                    </Flex>
                 </div>
             </div>
         </div>

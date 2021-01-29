@@ -1,0 +1,36 @@
+@import '../../../assets/sass/modules/mixins.scss';
+
+.blockContent {
+    position: relative;
+    min-height: 1px;
+    padding: 0 15px;
+    .container {
+        padding: 4rem 3rem;
+        position: relative;
+        background-color: #fff;
+        z-index: 2;
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        width: 100%;
+    }
+}
+
+@include breakpoint(laptop) {
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
+@include breakpoint(tactil) {
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
+
+@include breakpoint(mobile) {
+    .blockContent {
+        .container {
+            padding: 3rem 2rem;
+        }
+    }
+}
