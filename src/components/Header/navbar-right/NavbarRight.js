@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './NavbarRight.module.scss';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Link from '../../Link/Link';
+import LinkHeader from '../../LinkHeader/LinkHeader';
+import Flex from '../../Flex/Flex';
 
 const renderMenuItems = ( props ) => {
     const { data, scrolled }  = props;
@@ -10,7 +11,7 @@ const renderMenuItems = ( props ) => {
         <ul className={styles.navigationRight}>
         {data.map((item) => (   
             <li key={item.id} className={styles.menuListItems}>
-                <Link 
+                <LinkHeader 
                 id={item.id}
                 href={item.href} 
                 className={cx({ [styles.active] : item.isActive }, { [styles.itemsScroll]: scrolled }, styles.items)} 
@@ -24,9 +25,9 @@ const renderMenuItems = ( props ) => {
 
 const NavbarRight = (props) => { 
     return (
-        <div className={styles.navbarRight}>
+        <Flex className={styles.navbarRight} center>
             {renderMenuItems(props)}
-        </div>
+        </Flex>
     );
 };
 

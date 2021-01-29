@@ -2,7 +2,6 @@
 
 .footer {
     .container{
-        display: flex;
         background-color: #343a40;
         color: #dee2e6;
 
@@ -99,8 +98,6 @@
                         .formContainer {
                             outline: none;
                             position: relative;
-                            display: flex;
-                            flex-wrap: wrap;
                             align-items: stretch;
                             width: 100%;
                             text-align: left;

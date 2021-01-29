@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from './FilterMenu.module.scss';
+import cx from 'classnames';
 import Button from '../../Button/Button';
 
-const FilterMenu = ({ setCategory, categoryMenu }) => {
+const FilterMenu = ({ setCategory, categoryMenu, display }) => {
+    categoryMenu.sort().unshift("Tout");
+    
     return (
         <nav className={styles.menu}>
             {categoryMenu.map((category, i) => (
@@ -11,9 +14,10 @@ const FilterMenu = ({ setCategory, categoryMenu }) => {
                 id={i} 
                 type="tertiary" 
                 label={category} 
-                className={styles.item} 
+                className={cx({ [styles.active] : display.displayCategory === undefined ? category === "Tout" :
+                display.displayCategory === category }, styles.item)} 
                 onClick={() => setCategory(category)} />
-            )).sort()}
+            ))}
         </nav>
     )
 }

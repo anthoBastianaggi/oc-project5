@@ -1,0 +1,102 @@
+@import '../../../assets/sass/modules/mixins.scss';
+
+.legalMentions {
+    padding: 4rem 0;
+    .blockContent {
+        position: relative;
+        min-height: 1px;
+        padding: 0 15px;
+        .container {
+            padding: 4rem 3rem;
+            position: relative;
+            background-color: #fff;
+            z-index: 2;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+            width: 100%;
+            .wrapper {
+                .blockInfo {
+                    position: relative;
+                    min-height: 1px;
+                    margin: 0 auto;
+                    .infoTitleContainer {
+                        margin-bottom: 3rem;
+                        .infoTitle {
+                            margin: 0 0 .5rem 0;
+                            position: relative;
+                            justify-content: left;
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                height: 3px;
+                                background-color: #0078ff;
+                                width: 100px;
+                                bottom: -12px;
+                            }
+                        }
+                    }
+    
+                    .infoContainer {
+                        margin-bottom: 3rem;
+                        &:last-child {
+                            margin-bottom: 0rem;
+                        }
+                        .info {
+                            margin-top: 0;
+                            text-align: justify;
+                            display: flex;
+                            align-items: baseline;
+                            min-height: 35px;
+                            line-height: 35px;
+                            .title {
+                                font-weight: 600;
+                                color: #1e1e1e;
+                                font-size: 1.1rem;
+                                display: block;
+                                width: 350px;
+                            }
+                        }
+                    }         
+                }
+            }
+        }
+    }
+}
+
+
+@include breakpoint(laptop) {
+    .wrapper {
+        flex-direction: column;
+    }
+}
+
+@include breakpoint(tactil) {
+    .legalMentions {
+        .blockContent {
+            .container {
+                .wrapper {
+                    flex-direction: column;
+                    .blockInfo {
+                        margin: 0;
+                        .infoContainer {
+                            .info {
+                                display: block;
+                                .title {
+                                    width: 100%;
+                                }
+                            }
+                        }         
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@include breakpoint(mobile) {
+    .blockContent {
+        .container {
+            padding: 3rem 2rem;
+        }
+    }
+}

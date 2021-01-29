@@ -56,20 +56,17 @@
         }
 
         .content {
-            padding: 1rem;
+            padding: 1rem 10px;
             height: 78px;
             .blockContainer {
-                display: flex;
                 height: 100%;
-                align-content: center;
+                padding: 0 10px;
                 .blockDescription {
-                    flex: 0 0 66.666667%;
-                    max-width: 66.666667%;
+                    flex: 0 0 90%;
                     position: relative;
                     width: 100%;
                     min-height: 1px;
-                    padding-right: 15px;
-                    padding-left: 15px;
+                    padding-right: 10px;
                     display: grid;
                     align-content: center;
                     .title {
@@ -80,23 +77,31 @@
                         font-weight: 500;
                         line-height: 1.2;
                         margin-top: 0;
+                        justify-content: left;
                     }
 
                     .description {
                         color: #4e4e4e;
                         font-size: .8rem;
-                        .category span {
+                        .category {
+                            background-color: transparent;
+                            border: none;
+                            padding: 0;
+                            display: inline-block;
+                            height: 100%;
                             font-size: .8rem;
-                            color: #0078ff;
-                        }
+                            border-radius: 0;
+                            span {
+                                font-size: .8rem;
+                                color: #0078ff;
+                            }
+                        }       
                     }
                 }
 
                 .blockIcon {
                     position: relative;
                     min-height: 1px;
-                    padding-right: 15px;
-                    padding-left: 15px;
                     display: grid;
                     align-content: center;
                     width: 100%;
@@ -107,9 +112,6 @@
                         border-radius: 50%;
                         width: 30px;
                         height: 30px;
-                        justify-content: center;
-                        display: flex;
-                        align-items: center;
                         cursor: pointer;
                         a {
                             display: flex;
@@ -130,8 +132,8 @@
 
 @include breakpoint(laptop) {
     .card {
-        flex: 0 0 30.074%;
-        max-width: 30.074%;
+        flex: 0 0 30.073%;
+        max-width: 30.073%;
     }
 }
 

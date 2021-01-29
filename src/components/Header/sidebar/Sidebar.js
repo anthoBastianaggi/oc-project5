@@ -1,16 +1,17 @@
 import React from 'react';
 import styles from './Sidebar.module.scss';
+import cx from 'classnames';
 import PropTypes from 'prop-types';
-import Link from '../../Link/Link';
+import LinkHeader from '../../LinkHeader/LinkHeader';
 
 const renderMenuItems = (items) => (
     <ul className={styles.navigationRight}>
     {items.map((item) => (   
         <li key={item.id} className={styles.menuListItems}>
-            <Link 
+            <LinkHeader 
                 id={item.id}
                 href={item.href} 
-                className={styles.items} 
+                className={cx({ [styles.active] : item.isActive }, styles.items)} 
                 label={item.label} 
             />
         </li>

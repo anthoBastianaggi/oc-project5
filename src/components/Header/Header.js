@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import styles from './Header.module.scss';
 import NavbarRight from './navbar-right/NavbarRight';
 import Sidebar from './sidebar/Sidebar';
+import Flex from '../Flex/Flex';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '../../../node_modules/@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
@@ -14,9 +15,9 @@ const Header = () => {
   const container = useRef();
   
   const menuItems = [
-    { id: "home", href: "#home", label: "home", isActive:  useRouteMatch("/home") },
-    { id: "about", href: "#about", label: "about", isActive:  useRouteMatch("/about") },
-    { id: "skills", href: "#skills", label: "skills", isActive:  useRouteMatch("/skills") },
+    { id: "home", href: "#home", label: "accueil", isActive:  useRouteMatch("/home") },
+    { id: "about", href: "#about", label: "à propos", isActive:  useRouteMatch("/about") },
+    { id: "skills", href: "#skills", label: "compétences", isActive:  useRouteMatch("/skills") },
     { id: "services", href: "#services", label: "services", isActive:  useRouteMatch("/services") },
     { id: "portfolio", href: "#portfolio", label: "portfolio", isActive:  useRouteMatch("/portfolio") },
     { id: "contact", href: "#contact", label: "contact", isActive:  useRouteMatch("/contact") }
@@ -71,19 +72,20 @@ const Header = () => {
   return (
     <header className={cx({ [styles.headerScroll]: scrolled }, styles.header)}>
       <nav className={cx({ [styles.active] : menuSidebarOpen }, styles.navigation)}>
-        <div className={styles.container}>
-          <div className={styles.headerContainer}>
+        <Flex className={styles.container} between>
+          <Flex className={styles.headerContainer} center>
               <span className={styles.headerTitle}>BASTIANAGGI Anthony</span>
             <BtnMenuBurger />
-          </div>
+          </Flex>
           <Sidebar
             className={cx(styles.sidebar, { [styles.sidebarActive]: menuSidebarOpen })}
             setSidebarRef={setSidebarRef}
             data={menuItems}
             opened={menuSidebarOpen}
+            scrolled={scrolled}
           />
           <NavbarRight data={menuItems} scrolled={scrolled} />
-        </div>
+        </Flex>
       </nav>
     </header>
   );

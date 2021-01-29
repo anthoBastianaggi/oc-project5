@@ -3,7 +3,11 @@ import styles from './Footer.module.scss';
 import cx from 'classnames';
 import Button from '../Button/Button';
 import Link from '../Link/Link';
+import Flex from '../Flex/Flex';
+import Title from '../Title/Title';
 import { faFacebook, faTwitter, faInstagram, faLinkedin } from "../../../node_modules/@fortawesome/free-brands-svg-icons";
+
+const date = () => new Date().getFullYear();
 
 const socialItems = [
     { id: "facebook", href: "https://www.facebook.com/anthony.bastianaggi", icon: faFacebook },
@@ -13,26 +17,34 @@ const socialItems = [
 ];
 
 const interfaceLang = [
-    { id: "french", alt: "france-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-france" /> },
-    { id: "english", alt: "england-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-england" /> },
-    { id: "italian", alt: "italy-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-italy" /> },
-    { id: "corsican", alt: "corse-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-corsica" /> }
+    { id: "french", alt: "france-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-france" onClick={onClickInterfaceLang} /> },
+    { id: "english", alt: "england-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-england" onClick={onClickInterfaceLang} /> },
+    { id: "italian", alt: "italy-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-italy" onClick={onClickInterfaceLang} /> },
+    { id: "corsican", alt: "corse-icon" , icon: <Button className={styles.buttonFlag} type="tertiary" iconFlag="flag-corsica" onClick={onClickInterfaceLang} /> }
 ];
 
 const infoMenuItems = [
-    { id: "légal-mention", href: "/", label: "Mention légal" },
-    { id: "terms-of-services", href: "/", label: "Conditions d'utilisation" },
-    { id: "sitemap", href: "/", label: "Plan du site" },
+    { id: "legal-mentions", href: "/legal-mentions", label: "Mentions légales" },
+    { id: "terms-of-services", href: "/general-conditions", label: "Conditions d'utilisations" },
+    { id: "sitemap", href: "/street-maps", label: "Plan du site" },
   ];
+
+function onClickInterfaceLang() {
+    alert("Le choix de la langue d'interface n'est pas fonctionnel actuellement. Il le sera lors de la prochaine version du projet.")
+}
+
+function onClickNewslatter() {
+    alert("La newslatter n'est pas fonctionnelle actuellement. Elle le sera lors de la prochaine version du projet.")
+}
 
 const Footer = () => {
     return (
      <footer className={styles.footer}>
-         <div className={styles.container}>
+         <Flex className={styles.container}>
             <div className={styles.contentFooter}>
                 <div className={styles.block}>
                     <div className={styles.blockContainer}>
-                        <h2 className={styles.title}>A propos du site</h2>
+                        <Title as="h2" stylesTitle="stylesH2" className={styles.title}>A propos du site</Title>
                         <hr className={styles.hrFoot} />
 
                         <div className={styles.projectAbout}>
@@ -44,20 +56,20 @@ const Footer = () => {
                 </div>
                 <div className={styles.block}>
                     <div className={styles.blockContainer}>
-                        <h2 className={styles.title}>Rejoignez notre Newsletter</h2>
+                        <Title as="h2" stylesTitle="stylesH2" className={styles.title}>Rejoignez notre Newsletter</Title>
                         <hr className={styles.hrFoot} />
 
                         <form className={styles.formHorizontal}>
-                            <div className={styles.formContainer}>
+                            <Flex className={styles.formContainer} wrap>
                                 <input type="email" className={styles.formControl} placeholder="Email" />
-                                <button type="submit" className={styles.btnSubmit}>Rejoignez Nous</button>
-                            </div>
+                                <button type="button" className={styles.btnSubmit} onClick={onClickNewslatter}>Rejoignez Nous</button>
+                            </Flex>
                         </form>     
                     </div>
                 </div>
                 <div className={styles.block}>
                     <div className={styles.blockContainer}>
-                        <h2 className={styles.title}>Langue d'interface du site</h2>
+                        <Title as="h2" stylesTitle="stylesH2" className={styles.title}>Langue d'interface du site</Title>
                         <hr className={styles.hrFoot} />
 
                         <div className={styles.lang}>
@@ -75,7 +87,7 @@ const Footer = () => {
                 </div>
                 <div className={styles.block}>
                     <div className={styles.blockContainer}>
-                        <h2 className={styles.title}>Restez connecté</h2>
+                        <Title as="h2" stylesTitle="stylesH2" className={styles.title}>Restez connecté</Title>
                         <hr className={styles.hrFoot} />
 
                         <div className={styles.socials}>
@@ -95,7 +107,7 @@ const Footer = () => {
             <div className={cx(styles.contentFooter, styles.contentInfo)}>
                 <div className={styles.block}>
                     <div className={styles.blockContainer}>
-                        <h2 className={styles.title}>Information générale</h2>
+                        <Title as="h2" stylesTitle="stylesH2" className={styles.title}>Information générale</Title>
                         <hr className={styles.hrFoot} />
 
                         <div className={styles.infoMenu}>
@@ -112,9 +124,9 @@ const Footer = () => {
                     </div>
                 </div>   
             </div>
-        </div>
+        </Flex>
         <div className={styles.copyright}>
-            <span>&copy; 2020 Copyright: Anthony Bastianaggi - Tous droits réservés.</span>
+            <span>&copy; {date()} Copyright: Anthony Bastianaggi - Tous droits réservés.</span>
         </div>
      </footer>
     );
