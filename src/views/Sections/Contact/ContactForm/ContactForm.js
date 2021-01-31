@@ -11,7 +11,7 @@ const ContactForm = () => {
     const onSubmit = values => {
         setValidation(true); 
         servicesSection.postContact(values.name, values.email, values.object, values.message);
-        return console.log(values);
+        return values;
     }
 
     const [name, setName] = useState('');
