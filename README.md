@@ -1,3 +1,11 @@
+oc-project5 - Front End Portfolio 
+
+Pour lancer le Front-End ( React ) :
+
+Commande line :
+  - npm run start
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
